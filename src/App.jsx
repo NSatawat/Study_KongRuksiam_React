@@ -1,31 +1,33 @@
 import { useState } from "react";
 
+//เวลาจะใช้ components ต้อง  import
+import Header from "./components/Header";
+import PersonList from "./components/PersonList";
+
 function App() {
   const name = "คุณนั้ม";
   // const [age, setAge] = useState(28);
 
-  // state
-
+  //--1)state
   // function add() {
   //   setAge(age + 1);
   // }
-
   // function subtract() {
   //   setAge(age - 1);
   // }
-
   // function reset(){
   //   setAge(28);
   // }
 
-  //array-state
-  const [data, setData] = useState([
-    { id: 1, name: "นั้ม", gender: "ชาย" },
-    { id: 2, name: "น้ำ", gender: "หญิง" },
-    { id: 3, name: "ใจ", gender: "ชาย" },
-  ]);
-  console.table(data);
-  const[show,setshow]=useState(true);
+  //--2) array-state
+  // const [data, setData] = useState([
+  //   { id: 1, name: "นั้ม", gender: "ชาย" },
+  //   { id: 2, name: "น้ำ", gender: "หญิง" },
+  //   { id: 3, name: "ใจ", gender: "ชาย" },
+  // ]);
+  // console.table(data);
+  // const[show,setshow]=useState(true);
+
 
   return (
     <>
@@ -38,13 +40,18 @@ function App() {
       <button onClick={()=>setAge(age-1)}>ลด</button>
       <button onClick={()=>setAge(28)}>เคลียร์</button> */}
       
-      <h1>จำนวนประชากร {data.length} คน</h1>
+      {/* <h1>จำนวนประชากร {data.length} คน</h1>
+      <button onClick={()=>setshow(!show)}>{show ? "ซ่อน":"แสดง"}</button>
       <ul>
-        {data.map((item)=>( 
+        {show && data.map((item)=>( 
           <li key={item.id}>{item.id} | {item.name} | {item.gender}</li>
         ))}
       </ul>
-      <button onClick={()=>setshow(!show)}>สลับ</button>
+       */}
+
+      {/* เรียกใช้ components */}
+      <Header/>
+      <PersonList/>
     </>
   );
 }
